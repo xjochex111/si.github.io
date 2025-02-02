@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Estás segura?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 20%;
+            background-color: #ffe6e6;
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+            height: 200px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+        }
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background-color: #cccccc;
+            color: black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Estás segura?</h1>
+    <div class="buttons">
+        <button class="yes" id="yesBtn" onclick="moverSi()" onmouseover="moverSi()">Sí</button>
+        <button class="no" onclick="rechazado()">No</button>
+    </div>
+
+    <script>
+        function rechazado() {
+            alert("¡Gracias, mi morita hermosa! 🍇");
+        }
+
+        function moverSi() {
+            let btnSi = document.getElementById("yesBtn");
+            let x = Math.random() * (window.innerWidth - btnSi.offsetWidth);
+            let y = Math.random() * (window.innerHeight - btnSi.offsetHeight);
+            btnSi.style.left = x + "px";
+            btnSi.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
